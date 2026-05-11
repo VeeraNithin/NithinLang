@@ -9,22 +9,22 @@ def read_long_description():
         with open(readme_path, "r", encoding="utf-8") as fh:
             return fh.read()
     return (
-        "NithinLang V1 — A revolutionary 100% Free, Open-Source, Zero-Cloud, "
+        "NithinLang V1.5 — A revolutionary 100% Free, Open-Source, Zero-Cloud, "
         "Multi-Lingual, Ultra-Fast Programming Language."
     )
 
 setup(
     name="nithinlang",
-    version="1.0.0",
-    author="NithinLang Contributors",
+    version="1.5.0",
+    author="Veera Nithin (NGI Empire)",
     author_email="nithinlang@opensource.dev",
     description=(
-        "NithinLang V1: Free, Open-Source, Zero-Cloud, Multi-Lingual, "
+        "NithinLang V1.5: Free, Open-Source, Zero-Cloud, Multi-Lingual, "
         "Ultra-Fast Programming Language with built-in ML, Game Engine, and AI."
     ),
     long_description=read_long_description(),
     long_description_content_type="text/markdown",
-    url="https://github.com/nithinlang/nithinlang",
+    url="https://github.com/VeeraNithin/NithinLang",
     package_dir={"": "src"},
     packages=find_packages(where="src"),
     package_data={
@@ -43,6 +43,7 @@ setup(
         "requests>=2.31.0",
         "rich>=13.0.0",
         "click>=8.1.0",
+        "llama-cpp-python>=0.2.0", # Added for N-Loader
     ],
     extras_require={
         "dev": [

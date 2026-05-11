@@ -1,0 +1,58 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmLanguage.json",
+    "name": "NithinLang",
+    "patterns": [
+        { "include": "#keywords" },
+        { "include": "#strings" },
+        { "include": "#comments" },
+        { "include": "#functions" },
+        { "include": "#numbers" }
+    ],
+    "repository": {
+        "keywords": {
+            "patterns": [{
+                "name": "keyword.control.nl",
+                "match": "\\b(nithin|end nithin|lang\\+|yadi|kadu|maru|kosam|lopu|thirugu|cheyyandi|kaam|likho|raayi|vadu|nijam|abaddham)\\b"
+            }]
+        },
+        "strings": {
+            "patterns": [
+                {
+                    "name": "string.quoted.double.nl",
+                    "begin": "\"",
+                    "end": "\"",
+                    "patterns": [
+                        { "name": "constant.character.escape.nl", "match": "\\\\." }
+                    ]
+                },
+                {
+                    "name": "string.quoted.single.nl",
+                    "begin": "'",
+                    "end": "'",
+                    "patterns": [
+                        { "name": "constant.character.escape.nl", "match": "\\\\." }
+                    ]
+                }
+            ]
+        },
+        "comments": {
+            "patterns": [{
+                "name": "comment.line.number-sign.nl",
+                "match": "#.*$"
+            }]
+        },
+        "functions": {
+            "patterns": [{
+                "name": "entity.name.function.nl",
+                "match": "\\b(math_sqrt|math_pow|math_abs|math_floor|math_ceil|math_round|math_log|math_sin|math_cos|math_tan|ai_adugu|ai_chudu|ai_embed|ai_sentiment|ai_summarise|ai_classify|ata_modal|ata_rangu|ata_vadi|ata_muginchu|game_start|game_stop|game_draw|game_clear|game_loop|game_color|game_text|game_sprite|game_key|game_collide|game_sound|game_fps|data_chudu|data_save|data_describe|data_filter|data_sort|data_group|data_plot|model_train|model_test|model_predict|model_save|model_load|cluster_fit|np_array|np_zeros|np_ones|np_linspace|np_mean|np_std|np_sum|np_max|np_min|vec_add|vec_sub|vec_mul|vec_dot|mat_mul|timer_start|timer_stop|nl_sleep|nl_exit|nl_env|nl_args|nl_platform|nl_random|nl_randint|nl_uuid|nl_hash|nl_json_load|nl_json_dump|nl_http_get|nl_http_post|f_open|f_read|f_write|f_close|f_append|f_exists|f_delete|f_lines|print|input)\\b"
+            }]
+        },
+        "numbers": {
+            "patterns": [{
+                "name": "constant.numeric.nl",
+                "match": "\\b[0-9]+(\\.[0-9]+)?\\b"
+            }]
+        }
+    },
+    "scopeName": "source.nl"
+}

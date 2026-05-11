@@ -15,6 +15,7 @@ Subcommands
   nithin langs                     List supported languages
   nithin bench  <file.nl>          Run + display execution timing
   nithin repl                      Interactive REPL (experimental)
+  nithin ai-status                 Check local AI brain and N-Loader status
 
 Options
 -------
@@ -54,6 +55,12 @@ from nithinlang.parser      import NithinParser
 from nithinlang.compiler    import NithinCompiler
 from nithinlang.dicts       import list_languages
 
+try:
+    from nithinlang.n_loader import NLoader
+    _NLOADER_AVAILABLE = True
+except ImportError:
+    _NLOADER_AVAILABLE = False
+
 
 # ---------------------------------------------------------------------------
 # Console helper (Rich or plain)
@@ -72,7 +79,8 @@ if _RICH:
     def _print_banner() -> None:
         banner = Panel(
             f"[bold yellow]NithinLang[/bold yellow] [white]v{__version__}[/white]\n"
-            "[dim]100% Free · Open-Source · Zero-Cloud · Multi-Lingual · Ultra-Fast[/dim]",
+            "[dim]100% Free · Open-Source · Zero-Cloud · Multi-Lingual · Ultra-Fast[/dim]\n"
+            "[bold cyan]ENGINEERED BY NGI EMPIRE - POWERING BHARAT[/bold cyan]",
             border_style="bright_blue",
             expand=False,
         )
@@ -87,7 +95,7 @@ else:
     def _print_info(msg: str) -> None:                   # type: ignore[misc]
         print(f"[INFO] {msg}")
     def _print_banner() -> None:                         # type: ignore[misc]
-        print(f"NithinLang v{__version__}")
+        print(f"NithinLang v{__version__} - NGI EMPIRE CORE SYSTEM")
         print("100% Free · Open-Source · Zero-Cloud · Multi-Lingual · Ultra-Fast")
 
 
@@ -197,7 +205,7 @@ _HELLO_TEMPLATES = {
         lang+ telugu
 
         # Telugu lo Hello World
-        raayi("Namaskaram, Praapanicham!")
+        raayi("Namaskaram, Prapancham!")
         raayi("NithinLang ki swaagatam!")
 
         # Loop
@@ -397,7 +405,7 @@ if _CLICK:
     @click.pass_context
     def main(ctx: click.Context) -> None:
         """
-        NithinLang V1 — Multi-Lingual Ultra-Fast Programming Language.
+        NithinLang V1.5 — Multi-Lingual Ultra-Fast Programming Language.
 
         \b
         Examples:
@@ -406,6 +414,7 @@ if _CLICK:
           nithin new   my_project
           nithin repl
           nithin langs
+          nithin ai-status
         """
         if ctx.invoked_subcommand is None:
             _print_banner()
@@ -575,6 +584,27 @@ if _CLICK:
         """Start the interactive NithinLang REPL."""
         _run_repl(verbose=verbose)
 
+    @main.command("ai-status")
+    def cmd_ai_status() -> None:
+        """Check local AI brain and N-Loader status."""
+        _print_banner()
+        if _NLOADER_AVAILABLE:
+            loader = NLoader()
+            status = loader.get_model_status()
+            if _RICH:
+                table = Table(title="NGI Zero-Cloud AI Engine Status", border_style="cyan")
+                table.add_column("Property", style="bold white")
+                table.add_column("Value", style="bold yellow")
+                for k, v in status.items():
+                    table.add_row(k.capitalize(), str(v))
+                _console.print(table)
+            else:
+                print("NGI AI Engine Status:")
+                for k, v in status.items():
+                    print(f"  {k.capitalize()}: {v}")
+        else:
+            _print_error("N-Loader module is not available.")
+
 else:
     # ── Fallback: argparse-based CLI (when click is not installed) ─────────
 
@@ -619,6 +649,9 @@ else:
         # repl
         sub.add_parser("repl",    help="Interactive REPL")
 
+        # ai-status
+        sub.add_parser("ai-status", help="Check local AI brain and N-Loader status")
+
         args = parser_cli.parse_args()
 
         if args.command == "run":
@@ -657,6 +690,16 @@ else:
 
         elif args.command == "repl":
             _run_repl()
+
+        elif args.command == "ai-status":
+            if _NLOADER_AVAILABLE:
+                loader = NLoader()
+                status = loader.get_model_status()
+                print("NGI AI Engine Status:")
+                for k, v in status.items():
+                    print(f"  {k.capitalize()}: {v}")
+            else:
+                print("N-Loader module not available.")
 
         else:
             _print_banner()

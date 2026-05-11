@@ -1,0 +1,26 @@
+{
+    "name": "nithinlang-vscode",
+    "displayName": "NithinLang",
+    "description": "Syntax highlighting for NithinLang",
+    "version": "1.5.0",
+    "publisher": "NGI-Empire",
+    "engines": {
+        "vscode": "^1.70.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "nithinlang",
+            "aliases": ["NithinLang", "nl"],
+            "extensions": [".nl"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "nithinlang",
+            "scopeName": "source.nl",
+            "path": "./syntaxes/nithinlang.tmLanguage.json"
+        }]
+    }
+}

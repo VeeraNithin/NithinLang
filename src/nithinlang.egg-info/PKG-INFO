@@ -1,26 +1,16 @@
 Metadata-Version: 2.4
 Name: nithinlang
-Version: 1.0.0
-Summary: NithinLang V1: Free, Open-Source, Zero-Cloud, Multi-Lingual, Ultra-Fast Programming Language with built-in ML, Game Engine, and AI.
-Home-page: https://github.com/nithinlang/nithinlang
-Author: NithinLang Contributors
-Author-email: nithinlang@opensource.dev
-Classifier: Development Status :: 4 - Beta
-Classifier: Environment :: Console
-Classifier: Intended Audience :: Developers
-Classifier: Intended Audience :: Science/Research
+Version: 1.5.0
+Summary: NithinLang V1.5: Zero-Cloud, Multi-Lingual, LLVM-Powered Programming Language.
+Home-page: https://github.com/VeeraNithin/NithinLang
+Author: Veera Nithin (NGI Empire)
+Author-email: Veera Nithin <nithinlang@opensource.dev>
+Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
-Classifier: Programming Language :: Python :: 3
-Classifier: Programming Language :: Python :: 3.9
-Classifier: Programming Language :: Python :: 3.10
-Classifier: Programming Language :: Python :: 3.11
-Classifier: Programming Language :: Python :: 3.12
-Classifier: Topic :: Software Development :: Compilers
-Classifier: Topic :: Software Development :: Interpreters
-Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
 Requires-Python: >=3.9
 Description-Content-Type: text/markdown
+License-File: LICENSE
 Requires-Dist: llvmlite>=0.41.0
 Requires-Dist: numpy>=1.24.0
 Requires-Dist: pandas>=2.0.0
@@ -29,22 +19,10 @@ Requires-Dist: pygame-ce>=2.5.0
 Requires-Dist: requests>=2.31.0
 Requires-Dist: rich>=13.0.0
 Requires-Dist: click>=8.1.0
-Provides-Extra: dev
-Requires-Dist: pytest>=7.4.0; extra == "dev"
-Requires-Dist: black>=23.0.0; extra == "dev"
-Requires-Dist: mypy>=1.5.0; extra == "dev"
-Requires-Dist: flake8>=6.0.0; extra == "dev"
-Provides-Extra: ai
-Requires-Dist: ollama>=0.1.0; extra == "ai"
+Requires-Dist: llama-cpp-python>=0.2.0
 Dynamic: author
-Dynamic: author-email
-Dynamic: classifier
-Dynamic: description
-Dynamic: description-content-type
 Dynamic: home-page
-Dynamic: provides-extra
-Dynamic: requires-dist
+Dynamic: license-file
 Dynamic: requires-python
-Dynamic: summary
 
-NithinLang V1 — A revolutionary 100% Free, Open-Source, Zero-Cloud, Multi-Lingual, Ultra-Fast Programming Language.
+# NithinLang
