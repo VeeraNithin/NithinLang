@@ -104,6 +104,23 @@ nithin ai-status : Check the status of your offline Neural Network (N-Loader).
 nithin repl : Interactive native-language shell.
 
 nithin langs : List all supported human languages.
+# 🚀 NithinLang (V2.0 Giga Edition)
+**Engineered by NGI Empire - Powering Bharat**
+
+NithinLang is a revolutionary, blazing-fast, Multi-Lingual Programming Language and Ecosystem. It allows you to code in your native language (Telugu, Hindi, English) with zero performance loss. 
+
+Now featuring a built-in **2D Game Engine**, **Offline AI Brain (N-Loader)**, **Web Server**, and direct **Android APK Building**!
+
+## 🌟 What's New in V2.0?
+* 🎮 **Native 2D Game Engine:** Build 60 FPS games with collision, physics, and UI buttons.
+* 🤖 **N-Loader (Zero-Cloud AI):** Run LLMs completely offline directly in your code.
+* 🌐 **Web Server Engine:** Host websites and APIs with just 2 lines of code.
+* 📱 **Android APK & Windows EXE:** Build standalone apps and games instantly using the CLI.
+* ⚡ **LLVM JIT Compiler:** Execute mathematical and logical operations at C-level speeds.
+
+## 📦 Installation
+
+pip install nithinlang
 
 🗺️ Roadmap (V2.0 & Beyond)
 
