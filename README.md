@@ -102,8 +102,19 @@ nithin check <file.nl> : Static syntax and translation validation.
 nithin ai-status : Check the status of your offline Neural Network (N-Loader).
 
 nithin repl : Interactive native-language shell.
+🛠️ Global CLI Commands
+nithin run file.nl - Run a NithinLang file.
+
+nithin build file.nl - Convert your code into a Windows .exe file.
+
+nithin build-apk file.nl - Convert your game into an Android .apk!
+
+nithin repl - Open the interactive coding shell.
+
+nithin bench file.nl - Benchmark the execution speed.
 
 nithin langs : List all supported human languages.
+
 # 🚀 NithinLang (V2.0 Giga Edition)
 **Engineered by NGI Empire - Powering Bharat**
 
